@@ -1,0 +1,197 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body */
+body {
+  background: linear-gradient(135deg, #ffd6e8, #fff1f7);
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Hero */
+.hero h1 {
+  font-size: 2.5rem;
+  color: #e91e63;
+  margin-top: 40px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Sections */
+section {
+  margin-top: 50px;
+}
+
+/* Photos */
+.photos h2,
+.message h2 {
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.photo-grid img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Message */
+.message p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Button */
+.love-btn button {
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.2s, background 0.2s;
+  animation: pulse 1.8s infinite;
+}
+
+.love-btn button:hover {
+  background: #d81b60;
+  transform: scale(1.05);
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Floating Hearts */
+body::before {
+  content: "💖 💕 💗 💓 💞";
+  position: fixed;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  font-size: 2rem;
+  opacity: 0.2;
+  animation: floatHearts 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(120vh); }
+}
+
+/* Love Popup */
+#lovePopup {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 214, 232, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: transform 0.4s ease;
+  z-index: 999;
+}
+
+#lovePopup h1 {
+  font-size: 4rem;
+  color: #e91e63;
+  animation: boom 1s ease infinite;
+}
+
+/* Boom animation */
+@keyframes boom {
+  0% { transform: scale(0.8) rotate(-2deg); }
+  50% { transform: scale(1.1) rotate(2deg); }
+  100% { transform: scale(0.8) rotate(-2deg); }
+}
+
+/* Back Button */
+#backBtn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  border-radius: 50px;
+  border: none;
+  background: #e91e63;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#backBtn:hover {
+  background: #d81b60;
+  transform: scale(1.05);
+}
+
+/* Firework hearts */
+.firework {
+  position: fixed;
+  font-size: 2rem;
+  animation: explode 1.2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) translateY(-150px);
+    opacity: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .message p {
+    font-size: 1rem;
+  }
+
+  #lovePopup h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}
